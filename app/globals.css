@@ -56,6 +56,27 @@ body {
   font-family: 'Gelion-Variable', 'Gelion-Regular', system-ui, -apple-system, sans-serif;
 }
 
+/* Enhanced BuyMeACoffee-inspired styles */
+.enhanced-input {
+  @apply px-6 py-4 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 hover:border-gray-300 placeholder-gray-400 font-medium shadow-sm hover:shadow-md text-lg;
+}
+
+.enhanced-button {
+  @apply px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-lg;
+}
+
+.enhanced-button-secondary {
+  @apply px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200 transition-all duration-300 text-lg transform hover:scale-105;
+}
+
+.enhanced-heading {
+  @apply text-4xl font-black text-gray-900 mb-8 leading-tight;
+}
+
+.enhanced-card {
+  @apply border-2 border-gray-200 rounded-2xl p-6 transition-all duration-300 shadow-sm hover:shadow-lg transform hover:scale-105 hover:border-gray-300;
+}
+
 /* Custom Animations */
 @keyframes fadeIn {
   from {
@@ -69,7 +90,7 @@ body {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -80,7 +101,7 @@ body {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
@@ -91,7 +112,7 @@ body {
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -102,7 +123,7 @@ body {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -117,7 +138,7 @@ body {
   }
   50% {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   70% {
     transform: scale(0.9);

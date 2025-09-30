@@ -103,20 +103,20 @@ export default function Booking() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 xl:px-24 py-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-gray-900">Zitouna</h1>
+            <h1 className="text-3xl font-black text-gray-900 tracking-tight">Zitouna</h1>
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-lg text-gray-600">
             {isLoggedIn ? (
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-medium text-gray-700">U</span>
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-bold text-blue-600">U</span>
                 </div>
               </div>
             ) : (
-              <a href="/login" className="hover:text-gray-900" style={{ color: '#1e90ff' }}>
+              <a href="/login" className="hover:text-blue-700 font-semibold transition-all duration-300 hover:scale-105 px-4 py-2 rounded-lg hover:bg-blue-50" style={{ color: '#1e90ff' }}>
                 Sign in
               </a>
             )}
@@ -125,24 +125,38 @@ export default function Booking() {
       </div>
 
       {/* Step Progress */}
-      <div className="max-w-4xl mx-auto px-32 sm:px-40 lg:px-48 py-4">
+      <div className="max-w-4xl mx-auto px-8 lg:px-16 xl:px-24 py-6">
         <div className="text-center">
-          <p className="text-sm text-gray-600">
+          <div className="flex items-center justify-center space-x-4 mb-4">
+            {[1, 2, 3, 4, 5].map((step) => (
+              <div
+                key={step}
+                className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${
+                  step <= currentStep
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-200 text-gray-500'
+                }`}
+              >
+                {step}
+              </div>
+            ))}
+          </div>
+          <p className="text-lg text-gray-600 font-medium">
             Step {currentStep} of 5
           </p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-32 sm:px-40 lg:px-48 pb-32">
+      <div className="max-w-4xl mx-auto px-8 lg:px-16 xl:px-24 pb-32">
         {/* Step 1: Address Selection */}
         {currentStep === 1 && (
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8 animate-slide-up">Select Addresses</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-12 animate-slide-up text-center">Select Addresses</h2>
             
-            <div className="space-y-8">
+            <div className="space-y-12">
               {/* Pickup Address */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-3">
+                <label className="block text-xl font-bold text-gray-900 mb-4">
                   Pickup Address
                 </label>
                 <div className="relative">
@@ -156,16 +170,16 @@ export default function Booking() {
                     onFocus={(e) => {
                       setShowPickupSuggestions(true);
                       e.target.style.borderColor = '#1e90ff';
-                      e.target.style.borderWidth = '1px';
+                      e.target.style.borderWidth = '2px';
                     }}
                     onBlur={(e) => {
                       setTimeout(() => setShowPickupSuggestions(false), 200);
                       e.target.style.borderColor = 'rgb(209 213 219)';
-                      e.target.style.borderWidth = '1px';
+                      e.target.style.borderWidth = '2px';
                     }}
                     onMouseEnter={(e) => {
                       if (document.activeElement !== e.target) {
-                        e.target.style.borderColor = 'black';
+                        e.target.style.borderColor = 'rgb(107 114 128)';
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -174,10 +188,10 @@ export default function Booking() {
                       }
                     }}
                     placeholder="Enter pickup address"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none hover:border-black focus:border-2 focus:z-10 sm:text-sm transition-colors text-gray-900 placeholder-gray-500"
+                    className="w-full px-6 py-4 border-2 border-gray-300 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 text-lg transition-all duration-300 text-gray-900 placeholder-gray-400 font-medium shadow-sm hover:shadow-md"
                   />
                   {showPickupSuggestions && (
-                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-md shadow-lg z-50 mt-1">
+                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-2xl shadow-xl z-50 mt-2">
                       {addressSuggestions
                         .filter(addr => addr.toLowerCase().includes(pickupAddress.toLowerCase()))
                         .map((suggestion, index) => (
@@ -187,7 +201,7 @@ export default function Booking() {
                               setPickupAddress(suggestion);
                               setShowPickupSuggestions(false);
                             }}
-                            className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 text-gray-900"
+                            className="w-full text-left px-6 py-4 hover:bg-blue-50 border-b border-gray-100 last:border-b-0 text-gray-900 transition-all duration-200 hover:translate-x-2 font-medium"
                           >
                             {suggestion}
                           </button>
@@ -199,7 +213,7 @@ export default function Booking() {
 
               {/* Drop-off Address */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-3">
+                <label className="block text-xl font-bold text-gray-900 mb-4">
                   Drop-off Address
                 </label>
                 <div className="relative">
@@ -213,16 +227,16 @@ export default function Booking() {
                     onFocus={(e) => {
                       setShowDropoffSuggestions(true);
                       e.target.style.borderColor = '#1e90ff';
-                      e.target.style.borderWidth = '1px';
+                      e.target.style.borderWidth = '2px';
                     }}
                     onBlur={(e) => {
                       setTimeout(() => setShowDropoffSuggestions(false), 200);
                       e.target.style.borderColor = 'rgb(209 213 219)';
-                      e.target.style.borderWidth = '1px';
+                      e.target.style.borderWidth = '2px';
                     }}
                     onMouseEnter={(e) => {
                       if (document.activeElement !== e.target) {
-                        e.target.style.borderColor = 'black';
+                        e.target.style.borderColor = 'rgb(107 114 128)';
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -231,10 +245,10 @@ export default function Booking() {
                       }
                     }}
                     placeholder="Enter drop-off address"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none hover:border-black focus:border-2 focus:z-10 sm:text-sm transition-colors text-gray-900 placeholder-gray-500"
+                    className="w-full px-6 py-4 border-2 border-gray-300 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-100 text-lg transition-all duration-300 text-gray-900 placeholder-gray-400 font-medium shadow-sm hover:shadow-md"
                   />
                   {showDropoffSuggestions && (
-                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-md shadow-lg z-50 mt-1">
+                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-2xl shadow-xl z-50 mt-2">
                       {addressSuggestions
                         .filter(addr => addr.toLowerCase().includes(dropoffAddress.toLowerCase()))
                         .map((suggestion, index) => (
@@ -244,7 +258,7 @@ export default function Booking() {
                               setDropoffAddress(suggestion);
                               setShowDropoffSuggestions(false);
                             }}
-                            className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 text-gray-900"
+                            className="w-full text-left px-6 py-4 hover:bg-blue-50 border-b border-gray-100 last:border-b-0 text-gray-900 transition-all duration-200 hover:translate-x-2 font-medium"
                           >
                             {suggestion}
                           </button>
@@ -255,31 +269,18 @@ export default function Booking() {
               </div>
             </div>
 
-            <div className="flex justify-between mt-8">
+            <div className="flex justify-between mt-12">
               <button
                 onClick={handleBack}
                 disabled={true}
-                className="px-6 py-2 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
               >
                 Previous
               </button>
               <button
                 onClick={handleNext}
                 disabled={!pickupAddress.trim() || !dropoffAddress.trim()}
-                className="px-6 py-2 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ 
-                  backgroundColor: '#1e90ff',
-                }}
-                onMouseEnter={(e) => {
-                  if (!e.target.disabled) {
-                    e.target.style.backgroundColor = '#1a7ce8';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!e.target.disabled) {
-                    e.target.style.backgroundColor = '#1e90ff';
-                  }
-                }}
+                className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-lg"
               >
                 Continue
               </button>
@@ -290,61 +291,48 @@ export default function Booking() {
         {/* Step 2: Product Type Selection */}
         {currentStep === 2 && (
           <div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8">Select Product Type</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-12 text-center">Select Product Type</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {productTypes.map((product) => (
                 <div
                   key={product.id}
-                  className={`border rounded-lg p-4 cursor-pointer transition-all ${
+                  className={`border-2 rounded-2xl p-6 cursor-pointer transition-all duration-300 shadow-sm hover:shadow-lg transform hover:scale-105 ${
                     selectedProductType === product.id
-                      ? 'border-blue-500 bg-blue-50'
-                      : 'border-gray-200 hover:border-gray-300'
+                      ? 'border-blue-500 bg-blue-50 shadow-lg scale-105'
+                      : 'border-gray-200 hover:border-blue-300'
                   }`}
                   onClick={() => setSelectedProductType(product.id)}
                 >
-                  <div className="flex items-center">
+                  <div className="flex items-start">
                     <input
                       type="radio"
                       name="productType"
                       value={product.id}
                       checked={selectedProductType === product.id}
                       onChange={() => setSelectedProductType(product.id)}
-                      className="mr-3"
+                      className="mt-1 mr-4 w-5 h-5 text-blue-600 focus:ring-blue-500"
                     />
                     <div>
-                      <h3 className="font-medium text-gray-900">{product.name}</h3>
-                      <p className="text-sm text-gray-600">{product.description}</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                      <p className="text-base text-gray-600 leading-relaxed">{product.description}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="flex justify-between mt-8">
+            <div className="flex justify-between mt-12">
               <button
                 onClick={handleBack}
-                className="px-6 py-2 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+                className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200 transition-all duration-300 text-lg transform hover:scale-105"
               >
                 Previous
               </button>
               <button
                 onClick={handleNext}
                 disabled={!selectedProductType}
-                className="px-6 py-2 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ 
-                  backgroundColor: '#1e90ff',
-                }}
-                onMouseEnter={(e) => {
-                  if (!e.target.disabled) {
-                    e.target.style.backgroundColor = '#1a7ce8';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!e.target.disabled) {
-                    e.target.style.backgroundColor = '#1e90ff';
-                  }
-                }}
+                className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-lg"
               >
                 Continue
               </button>
@@ -355,12 +343,12 @@ export default function Booking() {
         {/* Step 3: Item Description */}
         {currentStep === 3 && (
           <div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8">Item Description</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-12 text-center">Item Description</h2>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Item Description */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-3">
+                <label className="block text-xl font-bold text-gray-900 mb-4">
                   Describe your item
                 </label>
                 <textarea
