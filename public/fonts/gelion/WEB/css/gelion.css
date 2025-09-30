@@ -1,0 +1,208 @@
+/**
+* @license
+*
+* Font Family: Gelion
+* Designed by: Deni Anggara
+* URL: https://www.fontstore.com/fonts/gelion
+* © 2025 Indian Type Foundry
+*
+* Gelion Extralight 
+* Gelion Extralight Italic 
+* Gelion Light 
+* Gelion Black Italic 
+* Gelion Semibold 
+* Gelion Light Italic 
+* Gelion Regular 
+* Gelion Italic 
+* Gelion Medium 
+* Gelion Variable (Variable font)
+* Gelion Bold Italic 
+* Gelion Variable Italic (Variable font)
+* Gelion Medium Italic 
+* Gelion Semibold Italic 
+* Gelion Black 
+* Gelion Bold 
+* Gelion Extrabold Italic 
+* Gelion Extrabold 
+
+*
+*/
+@font-face {
+  font-family: 'Gelion-Extralight';
+  src: url('../fonts/Gelion-Extralight.woff2') format('woff2'),
+       url('../fonts/Gelion-Extralight.woff') format('woff'),
+       url('../fonts/Gelion-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-ExtralightItalic';
+  src: url('../fonts/Gelion-ExtralightItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-ExtralightItalic.woff') format('woff'),
+       url('../fonts/Gelion-ExtralightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-Light';
+  src: url('../fonts/Gelion-Light.woff2') format('woff2'),
+       url('../fonts/Gelion-Light.woff') format('woff'),
+       url('../fonts/Gelion-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-BlackItalic';
+  src: url('../fonts/Gelion-BlackItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-BlackItalic.woff') format('woff'),
+       url('../fonts/Gelion-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-Semibold';
+  src: url('../fonts/Gelion-Semibold.woff2') format('woff2'),
+       url('../fonts/Gelion-Semibold.woff') format('woff'),
+       url('../fonts/Gelion-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-LightItalic';
+  src: url('../fonts/Gelion-LightItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-LightItalic.woff') format('woff'),
+       url('../fonts/Gelion-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-Regular';
+  src: url('../fonts/Gelion-Regular.woff2') format('woff2'),
+       url('../fonts/Gelion-Regular.woff') format('woff'),
+       url('../fonts/Gelion-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-Italic';
+  src: url('../fonts/Gelion-Italic.woff2') format('woff2'),
+       url('../fonts/Gelion-Italic.woff') format('woff'),
+       url('../fonts/Gelion-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-Medium';
+  src: url('../fonts/Gelion-Medium.woff2') format('woff2'),
+       url('../fonts/Gelion-Medium.woff') format('woff'),
+       url('../fonts/Gelion-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 200.0wght 500.0;
+*
+* available axes:
+'wght' (range from 200.0 to 900.0'wght' (range from 200.0 to 900.0
+*/
+@font-face {
+  font-family: 'Gelion-Variable';
+  src: url('../fonts/Gelion-Variable.woff2') format('woff2'),
+       url('../fonts/Gelion-Variable.woff') format('woff'),
+       url('../fonts/Gelion-Variable.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-BoldItalic';
+  src: url('../fonts/Gelion-BoldItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-BoldItalic.woff') format('woff'),
+       url('../fonts/Gelion-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 200.0wght 500.0;
+*
+* available axes:
+'wght' (range from 200.0 to 900.0'wght' (range from 200.0 to 900.0
+*/
+@font-face {
+  font-family: 'Gelion-VariableItalic';
+  src: url('../fonts/Gelion-VariableItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-VariableItalic.woff') format('woff'),
+       url('../fonts/Gelion-VariableItalic.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-MediumItalic';
+  src: url('../fonts/Gelion-MediumItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-MediumItalic.woff') format('woff'),
+       url('../fonts/Gelion-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-SemiboldItalic';
+  src: url('../fonts/Gelion-SemiboldItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-SemiboldItalic.woff') format('woff'),
+       url('../fonts/Gelion-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-Black';
+  src: url('../fonts/Gelion-Black.woff2') format('woff2'),
+       url('../fonts/Gelion-Black.woff') format('woff'),
+       url('../fonts/Gelion-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-Bold';
+  src: url('../fonts/Gelion-Bold.woff2') format('woff2'),
+       url('../fonts/Gelion-Bold.woff') format('woff'),
+       url('../fonts/Gelion-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gelion-ExtraboldItalic';
+  src: url('../fonts/Gelion-ExtraboldItalic.woff2') format('woff2'),
+       url('../fonts/Gelion-ExtraboldItalic.woff') format('woff'),
+       url('../fonts/Gelion-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gelion-Extrabold';
+  src: url('../fonts/Gelion-Extrabold.woff2') format('woff2'),
+       url('../fonts/Gelion-Extrabold.woff') format('woff'),
+       url('../fonts/Gelion-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
