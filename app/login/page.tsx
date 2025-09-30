@@ -14,31 +14,32 @@ export default function Login() {
     }, 2000);
   };
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pb-32">
+    <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       {/* Top Navigation */}
-      <div className="absolute top-0 right-0 p-6 animate-fade-in">
-        <div className="text-sm text-gray-600">
+      <div className="absolute top-0 right-0 p-8 animate-fade-in">
+        <div className="text-lg text-gray-600">
           Not a member yet?{' '}
-          <a href="#" className="font-medium hover:opacity-80 transition-opacity duration-200" style={{ color: '#1e90ff' }}>
+          <a href="#" className="font-bold hover:opacity-80 transition-all duration-300 hover:scale-105 px-3 py-1 rounded-lg hover:bg-blue-50" style={{ color: '#1e90ff' }}>
             Join
           </a>
         </div>
       </div>
 
-      <div className="max-w-md w-full space-y-8 animate-slide-up">
+      <div className="max-w-lg w-full space-y-12 animate-slide-up">
         {/* Welcome Header */}
         <div className="text-center animate-fade-in">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
             Welcome back
           </h1>
+          <p className="text-xl text-gray-600 font-medium">Sign in to continue your journey</p>
         </div>
 
         {/* Login Form */}
-        <form className="mt-8 space-y-6 animate-slide-up" onSubmit={handleSubmit}>
-          <div className="space-y-4">
+        <form className="space-y-8 animate-slide-up" onSubmit={handleSubmit}>
+          <div className="space-y-6">
             {/* Email Input */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-lg font-bold text-gray-900 mb-3">
                 Email
               </label>
               <input
@@ -47,35 +48,14 @@ export default function Login() {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none hover:border-black focus:border-2 focus:z-10 sm:text-sm transition-all duration-200 hover:scale-[1.02] focus:scale-[1.02]"
-                style={{ 
-                  '--tw-border-opacity': '1'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#1e90ff';
-                  e.target.style.borderWidth = '1px';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgb(209 213 219)';
-                  e.target.style.borderWidth = '1px';
-                }}
-                onMouseEnter={(e) => {
-                  if (document.activeElement !== e.target) {
-                    e.target.style.borderColor = 'black';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (document.activeElement !== e.target) {
-                    e.target.style.borderColor = 'rgb(209 213 219)';
-                  }
-                }}
+                className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 hover:border-gray-300 placeholder-gray-400 font-medium shadow-sm hover:shadow-md text-lg text-gray-900"
                 placeholder="Enter your email"
               />
             </div>
 
             {/* Password Input */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-lg font-bold text-gray-900 mb-3">
                 Password
               </label>
               <input
@@ -84,28 +64,7 @@ export default function Login() {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none hover:border-black focus:border-2 focus:z-10 sm:text-sm transition-all duration-200 hover:scale-[1.02] focus:scale-[1.02]"
-                style={{ 
-                  '--tw-border-opacity': '1'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = '#1e90ff';
-                  e.target.style.borderWidth = '1px';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgb(209 213 219)';
-                  e.target.style.borderWidth = '1px';
-                }}
-                onMouseEnter={(e) => {
-                  if (document.activeElement !== e.target) {
-                    e.target.style.borderColor = 'black';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (document.activeElement !== e.target) {
-                    e.target.style.borderColor = 'rgb(209 213 219)';
-                  }
-                }}
+                className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 hover:border-gray-300 placeholder-gray-400 font-medium shadow-sm hover:shadow-md text-lg text-gray-900"
                 placeholder="Enter your password"
               />
             </div>
@@ -117,19 +76,15 @@ export default function Login() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 focus:ring-2 border-gray-300 rounded"
-                  style={{ 
-                    accentColor: '#1e90ff',
-                    '&:focus': { ringColor: '#1e90ff' }
-                  }}
+                  className="h-5 w-5 focus:ring-2 border-gray-300 rounded text-blue-600 focus:ring-blue-500"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                <label htmlFor="remember-me" className="ml-3 block text-base text-gray-900 font-medium">
                   Remember me
                 </label>
               </div>
 
-              <div className="text-sm">
-                <a href="#" className="font-medium hover:opacity-80" style={{ color: '#1e90ff' }}>
+              <div className="text-base">
+                <a href="#" className="font-bold hover:opacity-80 transition-all duration-300 hover:scale-105 px-2 py-1 rounded-lg hover:bg-blue-50" style={{ color: '#1e90ff' }}>
                   Forgot your password?
                 </a>
               </div>
@@ -141,25 +96,11 @@ export default function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98]"
-              style={{ 
-                backgroundColor: isLoading ? '#1a7ce8' : '#1e90ff',
-                '&:hover': { backgroundColor: '#1a7ce8' }
-              }}
-              onMouseEnter={(e) => {
-                if (!isLoading) {
-                  e.target.style.backgroundColor = '#1a7ce8';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isLoading) {
-                  e.target.style.backgroundColor = '#1e90ff';
-                }
-              }}
+              className="w-full px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-xl"
             >
               {isLoading ? (
-                <div className="flex items-center">
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <div className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>

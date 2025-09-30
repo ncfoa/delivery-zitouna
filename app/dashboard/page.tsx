@@ -27,36 +27,36 @@ export default function Dashboard() {
     <div className="min-h-screen bg-white">
       <div className="flex">
         {/* Vertical Sidebar */}
-        <div className="w-80 bg-white border-r border-gray-200 min-h-screen">
-          <div className="p-6 flex flex-col h-full">
+        <div className="w-80 bg-white border-r-2 border-gray-100 min-h-screen shadow-lg">
+          <div className="p-8 flex flex-col h-full">
             {/* Logo */}
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold text-gray-900">Zaytouna</h1>
+            <div className="mb-12">
+              <h1 className="text-3xl font-black text-gray-900 tracking-tight">Zitouna</h1>
             </div>
             
             {/* User Info */}
-            <div className="flex flex-col items-center space-y-4 mb-20 mt-16">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center relative">
-                <span className="text-xl font-semibold text-gray-600">FH</span>
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex flex-col items-center space-y-6 mb-20 mt-16">
+              <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center relative transform hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span className="text-2xl font-bold text-blue-600">FH</span>
+                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                   </svg>
                 </div>
               </div>
               <div className="text-center">
-                <p className="text-lg font-medium text-gray-900">Firas Harbaoui</p>
-                <p className="text-base text-gray-500">firas.harbaoui@ensi-uma.tn</p>
+                <p className="text-xl font-bold text-gray-900">Firas Harbaoui</p>
+                <p className="text-base text-gray-500 font-medium">firas.harbaoui@ensi-uma.tn</p>
               </div>
             </div>
 
             {/* Navigation */}
-            <nav className="space-y-2 flex flex-col items-center">
+            <nav className="space-y-3 flex flex-col items-center">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.path)}
-                  className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-lg transition-colors duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium"
+                  className="w-full flex items-center space-x-4 px-6 py-4 rounded-2xl text-lg transition-all duration-300 text-gray-600 hover:bg-blue-50 hover:text-blue-600 font-bold transform hover:scale-105 hover:shadow-md"
                 >
                   {tab.id === 'activity' && (
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,22 +87,22 @@ export default function Dashboard() {
 
             {/* Footer Links */}
             <div className="mt-auto pt-8">
-              <div className="flex flex-col items-center space-y-4">
+              <div className="flex flex-col items-center space-y-6">
                 {/* Help Link with Badge */}
-                <a href="#" className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200 flex items-center space-x-2 bg-gray-100 px-3 py-2 rounded-full">
-                  <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                <a href="#" className="text-base text-gray-500 hover:text-blue-600 transition-all duration-300 flex items-center space-x-3 bg-gray-100 hover:bg-blue-50 px-4 py-3 rounded-2xl font-medium transform hover:scale-105">
+                  <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
                   <span>Help</span>
                 </a>
                 
                 {/* Other Links */}
-                <div className="flex flex-wrap justify-center gap-4 text-center">
-                  <a href="#" className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200">
+                <div className="flex flex-wrap justify-center gap-6 text-center">
+                  <a href="#" className="text-base text-gray-500 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105 px-2 py-1 rounded-lg hover:bg-blue-50">
                     Terms
                   </a>
-                  <a href="#" className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200">
+                  <a href="#" className="text-base text-gray-500 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105 px-2 py-1 rounded-lg hover:bg-blue-50">
                     Privacy
                   </a>
-                  <a href="#" className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200">
+                  <a href="#" className="text-base text-gray-500 hover:text-blue-600 transition-all duration-300 font-medium hover:scale-105 px-2 py-1 rounded-lg hover:bg-blue-50">
                     Cookies
                   </a>
                 </div>
